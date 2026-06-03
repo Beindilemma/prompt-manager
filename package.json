@@ -1,0 +1,108 @@
+{
+  "publisher": "lazycode",
+  "name": "lazycode-prompt-manager",
+  "displayName": "lazycode-prompt-manager",
+  "description": "",
+  "version": "0.0.1",
+  "icon": "resources/icon.png",
+  "engines": {
+    "vscode": "^1.120.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Beindilemma/prompt-manager"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "promptManager",
+          "title": "Prompt Manager",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "promptManager": [
+        {
+          "id": "promptManagerView",
+          "name": "Prompts"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "prompt-manager.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "promptManager.add",
+        "title": "Prompt Manager: 添加 Prompt"
+      },
+      {
+        "command": "promptManager.insert",
+        "title": "Prompt Manager: 插入 Prompt"
+      },
+      {
+        "command": "promptManager.edit",
+        "title": "Prompt Manager: 编辑 Prompt",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "promptManager.delete",
+        "title": "Prompt Manager: 删除 Prompt",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "promptManager.export",
+        "title": "Prompt Manager: Export"
+      },
+      {
+        "command": "promptManager.import",
+        "title": "Prompt Manager: Import"
+      }
+    ],
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "promptManager.edit",
+          "when": "viewItem == 'promptItem'",
+          "group": "inline"
+        },
+        {
+          "command": "promptManager.delete",
+          "when": "viewItem == 'promptItem'",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.120.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  },
+  "dependencies": {
+    "nanoid": "^3.3.12"
+  }
+}
