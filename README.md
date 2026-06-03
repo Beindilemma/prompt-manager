@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prompt Manager
 
 Save, search and insert your AI prompts directly in VSCode.
@@ -15,3 +16,6 @@ Save, search and insert your AI prompts directly in VSCode.
 1. `Prompt Manager: Add` — Save a new prompt
 2. `Prompt Manager: Insert` — Search and insert a prompt
 3. Use `{{variableName}}` in prompt body for dynamic variables
+=======
+# prompt-manager
+>>>>>>> 2f03c6bcad1360adbe8a22419296db6908c220ff
